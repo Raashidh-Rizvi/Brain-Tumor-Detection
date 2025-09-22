@@ -81,7 +81,7 @@ notebooks/
 ├── IT24104191_ImageResizingStandardization.ipynb
 ├── IT24102772 _NormalizationScaling.ipynb
 ├── IT24103670 _DataAugmentation.ipynb
-├── IT24103178_OutlierNoiseRemoval.ipynb
+├── IT24103178_OutlierNoiseRemoval&DimensionalityReduction.ipynb
 
 
 4. Run Integrated Group Pipeline
