@@ -117,3 +117,31 @@ Final Processed Dataset: results/outputs/final_dataset.npy
 Each member will explain their preprocessing technique, why it was needed, show code + visualization, and interpret results.
 
 Group will present the integrated preprocessing pipeline.
+
+## CLI interface for multi-model tumor checks
+
+Use `brain_tumor_interface.py` to run predictions across the trained MLP and on-demand classical ML models (logistic regression, random forest, and linear SVM).
+
+### Dependencies
+
+Install the runtime packages before executing the script:
+
+```
+pip install numpy pillow scikit-learn tensorflow joblib
+```
+
+### Usage
+
+Run predictions for an image while allowing the script to train any missing classical models from the preprocessed numpy dataset:
+
+```
+python brain_tumor_interface.py --image path/to/mri.jpg
+```
+
+Options:
+
+- Limit to specific models: `--models mlp random_forest`
+- Retrain classical baselines even if joblib files exist: `--retrain-classical`
+- Point to a custom dataset directory (must contain `X_train.npy` and `y_train.npy`): `--dataset-dir data/preprocessed_data/preprocessedForMLP_numpy`
+
+The script prints each model's top three predictions with confidence percentages.
